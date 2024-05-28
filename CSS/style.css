@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'blomberg';
+    src: url('blomberg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'blomberg';
+}
+
+body{
+    background-color: #030b0d;
+    font-family: 'blomberg';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: cover; /* Ajusta o tamanho da imagem de fundo para cobrir todo o elemento */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Garante que a imagem de fundo não seja repetida */
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+@keyframes pulse {
+    0%, 100% {transform: scale(0.9); }
+    50% {transform: scale(1); }
+}
+
+.panel.active{
+    flex: 4;
+    animation: pulse 5s infinite;
+    transition: flex 0.7s ease-in;
+}
+
+
+.panel h3 {
+    font-size: 54px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.panel.active:hover h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-child(4),.panel:nth-child(5){
+        display: none;
+    }
+}
+
+#saitama{
+    background-position: center calc(10% + 10px)
+}
+
+#luffy {
+    background-position: center calc(20% + 10px); /* Ajusta a posição da imagem de fundo para o centro vertical mais 10 pixels para baixo */
+}
+
+#naruto{
+    background-position: center calc(30% + 10px);;
+}
